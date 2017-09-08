@@ -1,0 +1,4 @@
+removed_sources:
+  erlang-rpm-macros-0.2.4.tar.gz: 2c67e5fa28da82c832247c350c33a4f2f53cdf11
+sources:
+  erlang-rpm-macros-0.2.8.tar.gz: 874f86ccf5ec419fe6a3f86fa235c4c92915e16a
