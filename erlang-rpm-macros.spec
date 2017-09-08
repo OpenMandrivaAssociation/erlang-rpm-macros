@@ -47,15 +47,3 @@ install -p -m 0644 erlang.attr %{buildroot}%{_rpmconfigdir}/fileattrs/
 %{_rpmconfigdir}/fileattrs/erlang.attr
 %{_sys_macros_dir}/erlang.macros
 
-
-
-%changelog
-* Thu Nov 17 2016 neoclust <neoclust> 0.2.4-1.mga6
-+ Revision: 1067914
-- New version 0.2.4
-- New version 0.2.3
-
-* Fri Apr 22 2016 neoclust <neoclust> 0.2.2-1.mga6
-+ Revision: 1004792
-- imported package erlang-rpm-macros
-
