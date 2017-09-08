@@ -1,4 +1,6 @@
-Name:		erlang-rpm-macros#
+%global debug_package %{nil}
+
+Name:		erlang-rpm-macros
 Version:	0.2.8
 Release:	1
 Summary:	Macros for simplifying building of Erlang packages
@@ -32,27 +34,18 @@ mv macros.erlang erlang.macros
 mkdir -p %{buildroot}%{_sys_macros_dir}/
 install -d %{buildroot}%{_rpmconfigdir}/fileattrs
 install -d %{buildroot}%{_rpmconfigdir}/macros.d
-#install -p -m 0755 erlang-find-provides.escript %{buildroot}%{_rpmconfigdir}/
 install -p -m 0755 erlang-find-provides.py %{buildroot}%{_rpmconfigdir}/
-#install -p -m 0755 erlang-find-requires.escript %{buildroot}%{_rpmconfigdir}/
 install -p -m 0755 erlang-find-requires.py %{buildroot}%{_rpmconfigdir}/
 install -p -m 0644 erlang.macros %{buildroot}%{_sys_macros_dir}/
 install -p -m 0644 erlang.attr %{buildroot}%{_rpmconfigdir}/fileattrs/
 
 
 %files
-#%license /LICENSE
 %doc README LICENSE
-#%%{_rpmconfigdir}/erlang-find-provides.escript
-%{_rpmconfigdir}/erlang-find-provides
-#%%{_rpmconfigdir}/erlang-find-requires.escript
-%{_rpmconfigdir}/erlang-find-requires
+%{_rpmconfigdir}/erlang-find-provides.py
+%{_rpmconfigdir}/erlang-find-requires.py
 %{_rpmconfigdir}/fileattrs/erlang.attr
 %{_sys_macros_dir}/erlang.macros
-
-#%%exclude %{_rpmconfigdir}/*.pyc
-#%%exclude %{_rpmconfigdir}/*.pyo
-
 
 
 
