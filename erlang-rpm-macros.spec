@@ -1,6 +1,4 @@
-%global debug_package %{nil}
-
-Name:		erlang-rpm-macros
+Name:		erlang-rpm-macros#
 Version:	0.2.8
 Release:	1
 Summary:	Macros for simplifying building of Erlang packages
@@ -32,18 +30,32 @@ Macros for simplifying building of Erlang packages.
 mv macros.erlang erlang.macros
 # and put it in the OM macros dir
 mkdir -p %{buildroot}%{_sys_macros_dir}/
-install -d %{buildroot}%{_rpmconfigdir}/fileattrs
-install -d %{buildroot}%{_rpmconfigdir}/macros.d
-install -p -m 0755 erlang-find-provides.py %{buildroot}%{_rpmconfigdir}/
-install -p -m 0755 erlang-find-requires.py %{buildroot}%{_rpmconfigdir}/
+mkdir -p %{buildroot}%{_usrlibrpm}/
+mkdir -p %{buildroot}%{_usrlibrpm}/fileattrs/
+install -d %{buildroot}%{_usrlibrpm}/macros.d
+install -p -m 0755 erlang-find-provides.py %{buildroot}%{_usrlibrpm}/erlang-find-provides
+install -p -m 0755 erlang-find-requires.py %{buildroot}%{_usrlibrpm}/erlang-find-requires
 install -p -m 0644 erlang.macros %{buildroot}%{_sys_macros_dir}/
-install -p -m 0644 erlang.attr %{buildroot}%{_rpmconfigdir}/fileattrs/
+install -p -m 0644 erlang.attr %{buildroot}%{_usrlibrpm}/fileattrs/
 
 
 %files
+#%license /LICENSE
 %doc README LICENSE
-%{_rpmconfigdir}/erlang-find-provides.py
-%{_rpmconfigdir}/erlang-find-requires.py
-%{_rpmconfigdir}/fileattrs/erlang.attr
+%{_usrlibrpm}/erlang-find-provides
+%{_usrlibrpm}/erlang-find-requires
+%{_usrlibrpm}/fileattrs/erlang.attr
 %{_sys_macros_dir}/erlang.macros
+
+
+
+%changelog
+* Thu Nov 17 2016 neoclust <neoclust> 0.2.4-1.mga6
++ Revision: 1067914
+- New version 0.2.4
+- New version 0.2.3
+
+* Fri Apr 22 2016 neoclust <neoclust> 0.2.2-1.mga6
++ Revision: 1004792
+- imported package erlang-rpm-macros
 
