@@ -1,4 +1,4 @@
-Name:		erlang-rpm-macros#
+Name:		erlang-rpm-macros
 Version:	0.2.8
 Release:	1
 Summary:	Macros for simplifying building of Erlang packages
