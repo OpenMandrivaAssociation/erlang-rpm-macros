@@ -19,7 +19,7 @@ Macros for simplifying building of Erlang packages.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 # Nothing to build
